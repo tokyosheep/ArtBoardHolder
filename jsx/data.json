@@ -1,0 +1,38 @@
+{
+    "type": "resizeBoards",
+    "args": {
+        "resizeValues": {
+            "width": 100,
+            "height": 100
+        },
+        "artBoards": [
+            {
+                "name": "アートボード 1",
+                "height": 974,
+                "width": 974,
+                "x": 25,
+                "y": 25,
+                "initIndex": 0,
+                "check": true
+            },
+            {
+                "name": "アートボード 2",
+                "height": 974,
+                "width": 974,
+                "x": 1069,
+                "y": 25,
+                "initIndex": 1,
+                "check": true
+            },
+            {
+                "name": "アートボード 3",
+                "height": 974,
+                "width": 974,
+                "x": 2113,
+                "y": 25,
+                "initIndex": 2,
+                "check": true
+            }
+        ]
+    }
+}
