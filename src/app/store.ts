@@ -9,6 +9,7 @@ import pdfPresetReducer from "../features/saveOptions/presetSlice";
 import savePathReducer from "../features/saveOptions/savePath";
 import jpegOptionReducer from "../features/saveOptions/jpegSlice";
 import windowVisibleReducer from "../features/saveOptions/optionWIndowSlice";
+import docEvent from "../features/event/switchEvent";
 
 export const store = configureStore({
     reducer:{
@@ -21,7 +22,8 @@ export const store = configureStore({
         pdfPresetList:pdfPresetReducer,
         savePath:savePathReducer,
         jpegOptions:jpegOptionReducer,
-        windowVisible:windowVisibleReducer
+        windowVisible:windowVisibleReducer,
+        isDocEvent:docEvent
     }
 });
 

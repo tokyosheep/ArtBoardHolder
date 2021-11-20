@@ -88,7 +88,7 @@ function generateFromItem(args){
         return false;
     }
     
-    var initialBord = removeAllBoards();
+    //var initialBord = removeAllBoards();
     doc.rulerOrigin = [0, doc.height];//座標の原点をアートボードの左上に設定
     var itemType = getItemType(args.point);
     if(itemType===null)return false;
@@ -98,7 +98,7 @@ function generateFromItem(args){
         return;
     }
     createArtBoardsFromItem(versions);
-    initialBord.remove();
+    //initialBord.remove();
 }
 
 

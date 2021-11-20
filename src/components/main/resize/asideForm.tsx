@@ -9,6 +9,7 @@ import { setValue , ReizeValueType } from "../../../features/resize/resizeSlice"
 import { ArtBoard , loadBoards } from "../../../features/artBoard/artboardSlice";
 
 import { writeDebugData } from "../../../../fileSystem/init";
+import { TurnFormNumber } from "../../../features/unit/unitSlice";
 import {  ArgObject , SendHostScript } from "../../../../fileSystem/connectJSX";
 
 type ArgBoards = {
@@ -43,6 +44,7 @@ const ResizeFormCompo = () =>{
     const dispatch = useAppDispatch();
     const artBoards = useAppSelector(state=>state.artBoards.boards);
     const resizeValues = useAppSelector(state=>state.resize.values);
+    const unitValue = useAppSelector(state=>state.unit.value);
     const numberForms = Object.entries(resizeValues).map(([key,value]:[keyof ReizeValueType,number],i)=>{
         return(
             <li key={key}>
@@ -62,11 +64,15 @@ const ResizeFormCompo = () =>{
         const arg:ArgObject<ArgBoards> = {
             type:"resizeBoards",
             args:{
-                resizeValues,
+                resizeValues:{
+                    width:TurnFormNumber[unitValue](resizeValues.width),
+                    height:TurnFormNumber[unitValue](resizeValues.height),
+                },
                 artBoards
             }
         }
-        //await writeDebugData(arg);
+        console.log(TurnFormNumber[unitValue](resizeValues.width));
+        await writeDebugData(arg);
         const connect = new SendHostScript();
         const r = await connect.callHostScript(arg);
         console.log(r);
@@ -77,7 +83,10 @@ const ResizeFormCompo = () =>{
         const arg:ArgObject<ArgBoards> = {
             type:"adjustBoards",
             args:{
-                resizeValues,
+                resizeValues:{
+                    width:TurnFormNumber[unitValue](resizeValues.width),
+                    height:TurnFormNumber[unitValue](resizeValues.height),
+                },
                 artBoards
             }
         }

@@ -31,13 +31,12 @@ declare module "styled-components"{
 }
 
 ReactDOM.render(
-    <>
-        <ThemeProvider theme={ColorTheme}>
-            <Provider store={store}>
-                <GlobalStyle bg={ColorTheme.darkGray} />
-                <Layout />
-            </Provider>
-        </ThemeProvider>
-    </>,
+    <ThemeProvider theme={ColorTheme}>
+        <Provider store={store}>
+            <GlobalStyle bg={ColorTheme.darkGray} />
+            <Layout />
+        </Provider>
+    </ThemeProvider>
+    ,
     document.getElementById("root")
 )

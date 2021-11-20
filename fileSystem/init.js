@@ -9,10 +9,11 @@ const dir_desktop = path.join(dir_home, `Desktop`);//デスクトップパス
 const jsxParts = `${extensionRoot}/parts`;
 const mainJsxFolder = `${extensionRoot}/mainProcess`;
 
+/*
 export const changeDocEvent = func =>{
     csInterface.addEventListener("documentAfterActivate",func,false);
 }
-
+*/
 export const reloadEvent = () =>{
     csInterface.addEventListener("com.adobe.csxs.events.WindowVisibilityChanged",()=>{location.reload(true)},false);
 }
@@ -64,5 +65,7 @@ export const openFolderDialog = () =>{
     console.log(parsed);
     return parsed.path;
 }
+
+
 
 export const alertFromJSX = msg => csInterface.evalScript(`$.evalFile(alert("${msg}"))`);

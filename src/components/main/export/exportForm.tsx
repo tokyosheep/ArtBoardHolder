@@ -3,6 +3,7 @@ import fs from "fs";
 import { useContext , FC } from "react";
 import styled,{ThemeContext}  from "styled-components";
 import { FormatObj } from "../../../features/export/formatSlice";
+import { ArtBoard } from "../../../features/artBoard/artboardSlice";
 import { switchVisible } from "../../../features/saveOptions/optionWIndowSlice";
 import { SaveDirectory } from "../../../features/saveOptions/savePath";
 
@@ -45,7 +46,8 @@ type Preset = {
         preset:string
     },
     jpegOption:number,
-    saveOptions:SaveDirectory["options"]
+    saveOptions:SaveDirectory["options"],
+    boards:ArtBoard[]
 }
 
 const isFilePath = async filePath =>{
@@ -60,21 +62,23 @@ const isFilePath = async filePath =>{
 
 const ExportForm = () =>{
     const dispatch = useAppDispatch();
+    const boards = useAppSelector(state=>state.artBoards.boards);
     const presets = useAppSelector(state=>state.pdfPresetList.preset);
     const saveOptions = useAppSelector(state=>state.savePath.options);
     const jpegOptions = useAppSelector(state=>state.jpegOptions.options);
     const format = useAppSelector(state=>state.formats.formats);
     const exportBoards = async() =>{
+        console.log(saveOptions);
         if(format.JPG&&(jpegOptions.quality < 0 || jpegOptions.quality > 100)){
             alertFromJSX("number of jpeg quality  is invlid");
             return;
         }
-        if(saveOptions.export&&isFilePath(saveOptions.savePath)){
+        if(saveOptions.export&&!isFilePath(saveOptions.savePath)){
             alertFromJSX("it's invlid directory");
             return;
         }
         const arg:ArgObject<Preset> = {
-            type:"saveBpards",
+            type:"saveBoards",
             args:{
                 format:format,
                 presets:{
@@ -82,10 +86,11 @@ const ExportForm = () =>{
                     preset:presets.selected
                 },
                 jpegOption:jpegOptions.quality,
-                saveOptions
+                saveOptions,
+                boards
             }
         }
-        //await writeDebugData(arg);
+        await writeDebugData(arg);
         const connect = new SendHostScript();
         const r = await connect.callHostScript(arg);
         console.log(r);

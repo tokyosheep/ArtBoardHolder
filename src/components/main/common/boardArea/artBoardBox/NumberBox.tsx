@@ -3,13 +3,13 @@ import { FC } from "react";
 import { useContext } from "react";
 import styled,{ ThemeContext } from "styled-components";
 
-const BoxWidth = 70;
+const BoxWidth = 80;
 
 const NumberBox = styled.div<{text:string}>`
     width: ${BoxWidth}px;
     height: 100%;
     color: ${props=>props.text};
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 300;
     display: flex;
     justify-content: space-between;

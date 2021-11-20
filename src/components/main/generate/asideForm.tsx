@@ -11,6 +11,7 @@ import { GenerateArg , getProp } from "../../../features/generate/generateSlice"
 import { unitsNum } from "../../../features/unit/unitSlice";
 import { loadBoards } from "../../../features/artBoard/artboardSlice";
 import { writeDebugData } from "../../../../fileSystem/init";
+import { TurnFormNumber } from "../../../features/unit/unitSlice";
 import {  SendHostScript } from "../../../../fileSystem/connectJSX";
 
 const GenerateWrapper = styled.div`
@@ -42,8 +43,8 @@ const GenerateAsideCompo = () =>{
             args:{
                 point,
                 size:{
-                    width:unitsNum[unit](generateValues.size.width),
-                    height:unitsNum[unit](generateValues.size.height),
+                    width:TurnFormNumber[unit](generateValues.size.width),
+                    height:TurnFormNumber[unit](generateValues.size.height),
                     number:generateValues.size.number
                 }
             }

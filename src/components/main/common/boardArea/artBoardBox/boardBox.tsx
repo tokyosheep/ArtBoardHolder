@@ -76,12 +76,12 @@ const BoardBox:FC<ArtBoard&{index:number}> = (prop) =>{
                 <span>{renamed}</span>
             </ArtNameArea>
             <SizeArea>
-                <ArtBoardNumberBox title="width" number={func(prop.width)} />
-                <ArtBoardNumberBox title="height" number={func(prop.height)} />
+                <ArtBoardNumberBox title="width" number={func(prop.width).toFixed(2)+units.value} />
+                <ArtBoardNumberBox title="height" number={func(prop.height).toFixed(2)+units.value} />
             </SizeArea>
             <PositionArea>
-                <ArtBoardNumberBox title="X" number={func(prop.x).toFixed(2)} />
-                <ArtBoardNumberBox title="Y" number={func(prop.y).toFixed(2)} />
+                <ArtBoardNumberBox title="X" number={func(prop.x).toFixed(2)+units.value} />
+                <ArtBoardNumberBox title="Y" number={func(prop.y).toFixed(2)+units.value} />
             </PositionArea>
             <CheckBoxArea>
                 <BoardCheckBox checked={prop.check} name="check" func={handleCheckBox} />

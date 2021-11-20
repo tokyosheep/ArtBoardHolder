@@ -7,7 +7,7 @@ function hostScript(obj){
         return false;
     }
     switch(obj.type){
-        case "saveBpards":
+        case "saveBoards":
             exportArtBoards(obj.args);
             break;
 

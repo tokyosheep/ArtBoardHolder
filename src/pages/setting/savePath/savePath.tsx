@@ -38,7 +38,7 @@ const PathWrapper = styled.div`
 
 const SavePathCompo = () =>{
     const dispatch = useAppDispatch();
-    const saveOptions = useAppSelector(state=>state.savePath.options);
+    const saveOptions = useAppSelector(state=>state.savePath);
     const handleCheckBox = useCallback((e,name)=>{
         console.log(e);
         console.log(name);
@@ -61,11 +61,11 @@ const SavePathCompo = () =>{
         <CommonContainer>
             <SubTitle>save path</SubTitle>
             <CheckBoxWrapper>
-                <StdCheckBox name="export" checked={saveOptions.export} func={handleCheckBox} />
-                <StdCheckBox name="useBoardName" checked={saveOptions.useBoardName} func={handleCheckBox} />
+                <StdCheckBox name="export" checked={saveOptions.options.export} func={handleCheckBox} />
+                <StdCheckBox name="useBoardName" checked={saveOptions.options.useBoardName} func={handleCheckBox} />
             </CheckBoxWrapper>
             <PathWrapper>
-                <StdTextBox  name="save path" func={handleTextBox} value={saveOptions.savePath} long={true}/>
+                <StdTextBox  name="save path" func={handleTextBox} value={saveOptions.options.savePath} long={true}/>
                 <StdButton name="call dialog" func={savePath} widthSize="130px" margin="20px" />
             </PathWrapper>
         </CommonContainer>
