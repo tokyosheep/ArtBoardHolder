@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { scrollStyle } from "./mixin";
 
 const WindowSize = {
     width:500,
@@ -28,6 +29,7 @@ export const MainContainer = {
     ArtBoardContainer:styled.main`
         grid-area: artBoardArea;
         overflow: scroll;
+        ${scrollStyle};
     `,
     EventButtonContainer:styled.aside`
         grid-area: eventBtnArea;
