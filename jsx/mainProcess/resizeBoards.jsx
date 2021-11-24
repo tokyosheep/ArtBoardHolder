@@ -97,10 +97,3 @@ function resizeBoards(args,type){
     }
 }
 
-/*
-function showRects(rect){
-    for(var n=0;n<rect.length;n++){
-        $.writeln(rect[n]+" :"+n)
-    }
-}
-*/

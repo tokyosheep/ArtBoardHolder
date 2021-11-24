@@ -1,5 +1,5 @@
 "use strict";
-const mode = "development";
+const mode = "production";
 const TerserPlugin = require("terser-webpack-plugin");
 const enabledSourceMap = mode === "production";
 const path = require("path");
@@ -9,7 +9,6 @@ module.exports = {
     // development に設定するとソースマップ有効でJSファイルが出力される
     mode: mode,
     devtool:"source-map",
-    /*
     optimization:{
       minimize: enabledSourceMap,
       minimizer:[
@@ -23,7 +22,6 @@ module.exports = {
           }),
       ],
     },
-    */
     target:"nwjs",
     // メインとなるJavaScriptファイル（エントリーポイント）
     entry: "./src/main.tsx",
