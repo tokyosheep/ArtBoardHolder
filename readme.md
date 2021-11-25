@@ -5,6 +5,8 @@ like resize , rename , generate , etc...
 I had developed some ExtendScripts for sorting artboard but it was messed up bit so I unified those scripts on the panel.  
 details are below.
 
+**[Japanese explanation is here](https://kawano-shuji.com/justdiary/2021/11/25/illustrator-extension-artboardholder/)**
+
 ![Panel](./readmeImages/panelCommon.jpg)
 
 ## common
