@@ -28,7 +28,11 @@ export const saveDirectory = createSlice({
             state.options[action.payload.prop] = action.payload.checked;
         },
         setPath:(state,action:PayloadAction<{value:string}>)=>{
-            state.options.savePath = action.payload.value;
+            if(action.payload.value.charAt(action.payload.value.length-1) !== "/"){
+                state.options.savePath = action.payload.value+"/";
+            }else{
+                state.options.savePath = action.payload.value;
+            }
         }
     }
 });

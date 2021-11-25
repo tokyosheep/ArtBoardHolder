@@ -1,5 +1,5 @@
 "use strict";
-const mode = "production";
+const mode = "development";
 const TerserPlugin = require("terser-webpack-plugin");
 const enabledSourceMap = mode === "production";
 const path = require("path");
