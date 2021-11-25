@@ -108,3 +108,8 @@ quality of jpeg image.
 
 3. **save path**
 you can choice directory you want to save images. dialog button calls dialog window.
+
+
+## download zxp
+
+**[download zxp file from here](https://kawano-shuji.com/strage/ArtBoardHolder.zxp)** 

@@ -90,7 +90,7 @@ const ExportForm = () =>{
                 boards
             }
         }
-        await writeDebugData(arg);
+        //await writeDebugData(arg);
         const connect = new SendHostScript();
         const r = await connect.callHostScript(arg);
         console.log(r);

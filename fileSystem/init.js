@@ -45,6 +45,7 @@ export const init = async() =>{
 }
 
 export const writeDebugData = obj =>{
+    return;
     fs.writeFileSync(`${extensionRoot}/data.json`,JSON.stringify(obj));
 }
 

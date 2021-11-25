@@ -11,7 +11,7 @@ import { StdButton } from "../../parts/button";
 
 import { RenameStrings , RenameSwitchs ,  RenameValueType } from "../../../features/rename/renameSlice";
 import { ArtBoard , loadBoards } from "../../../features/artBoard/artboardSlice";
-import { writeDebugData } from "../../../../fileSystem/init";
+//import { writeDebugData } from "../../../../fileSystem/init";
 import {  ArgObject , SendHostScript } from "../../../../fileSystem/connectJSX";
 
 type RenamedBoards = ArtBoard&{renamed:string};
