@@ -14,8 +14,8 @@ function getArtBoards(initBoards){
     if(!hasAnyDocument())return false;
     function getSize(rect){
         return {
-            height:Math.abs(rect[0]-rect[2]),
-            width:Math.abs(rect[1]-rect[3])
+            width:Math.abs(rect[0]-rect[2]),
+            height:Math.abs(rect[1]-rect[3])
         }
     }
     var artBoards = app.activeDocument.artboards;

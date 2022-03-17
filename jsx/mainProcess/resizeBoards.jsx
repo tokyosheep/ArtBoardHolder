@@ -46,17 +46,17 @@ function setSize(rect,width,height){
     return [
         rect[0],
         rect[1],
-        rect[0] + height,
-        rect[1] - width
+        rect[0] + width,
+        rect[1] - height
     ];
 }
 
 function adjustSize(rect,width,height){
     return [
-        rect[0] - height/2,
-        rect[1] + width/2,
-        rect[2] + height/2,
-        rect[3] - width/2
+        rect[0] - width/2,
+        rect[1] + height/2,
+        rect[2] + width/2,
+        rect[3] - height/2
     ]
 }
 
@@ -64,8 +64,8 @@ function resizeSize(rect,width,height){
     return [
         rect[0],
         rect[1],
-        rect[0] + Math.abs(height),
-        rect[1] - Math.abs(width)
+        rect[0] + Math.abs(width),
+        rect[1] - Math.abs(height)
     ]
 }
 

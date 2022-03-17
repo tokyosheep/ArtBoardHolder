@@ -40,7 +40,6 @@ const ButtonWrapper = styled.ul`
 `;
 
 const ResizeFormCompo = () =>{
-    const theme = useContext(ThemeContext);
     const dispatch = useAppDispatch();
     const artBoards = useAppSelector(state=>state.artBoards.boards);
     const resizeValues = useAppSelector(state=>state.resize.values);
