@@ -5,6 +5,9 @@ like resize , rename , generate , etc...
 I had developed some ExtendScripts for sorting artboard but it was messed up bit so I unified those scripts on the panel.  
 details are below.
 
+**17 March 2022update ver1.0.1**  
+I fixed bud that reversed some values (width and height)
+
 **[Japanese explanation is here](https://kawano-shuji.com/justdiary/2021/11/25/illustrator-extension-artboardholder/)**
 
 ![Panel](./readmeImages/panelCommon.jpg)
@@ -114,4 +117,4 @@ you can choice directory you want to save images. dialog button calls dialog win
 
 ## download zxp
 
-**[download zxp file from here](https://kawano-shuji.com/strage/ArtBoardHolder.zxp)** 
+**[download zxp file from here](https://kawano-shuji.com/strage/ArtBoardHolder_1_0_1.zxp)** 
